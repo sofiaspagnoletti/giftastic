@@ -21,18 +21,15 @@
     </div>
     <br>
     <div class="container text-center">
-        <button type="button" data-animal="cats" class="btn btn-info">Cats</button>
-        <button type="button" data-animal="dogs" class="btn btn-info">Dogs</button>
-        <button type="button" data-animal="birds" class="btn btn-info">Birds</button>
-        <button type="button" data-animal="elepants" class="btn btn-info">Elephants</button>
+        <button type="button" id="buttons-view" class="btn btn-info"></button>
     </div>
 
     <form>
-        <div class="form-group">
-            <label for="imputAnimal">Add your favorite animal:</label>
-            <input type="email" class="form-control" id="newAnimal">
+        <div id="animal-form" class="form-group">
+            <label for="animal-input">Add your favorite animal:</label>
+            <input class="form-control" id="animal-input">
         </div>
-        <button type="submit" class="btn btn-info">Submit</button>
+        <button id="add-animal" class="btn btn-info">Submit</button>
     </form>
 
 
