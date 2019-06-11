@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giftastic</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <strong>Giftastic!</strong>
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="container text-center">
+        <button type="button" data-animal="cats" class="btn btn-info">Cats</button>
+        <button type="button" data-animal="dogs" class="btn btn-info">Dogs</button>
+        <button type="button" data-animal="birds" class="btn btn-info">Birds</button>
+        <button type="button" data-animal="elepants" class="btn btn-info">Elephants</button>
+    </div>
+
+    <form>
+        <div class="form-group">
+            <label for="imputAnimal">Add your favorite animal:</label>
+            <input type="email" class="form-control" id="newAnimal">
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+
+
+    <div id="gifs-appear-here"></div>
+
+    <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>
