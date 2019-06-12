@@ -4,7 +4,7 @@
 // $("button").on("click", function () {
 //     var animal = $(this).attr("data-animal");
 
-var animals = ["Cats", "Dogs", "Birds", "Elephants"];
+var animals = ["Cat", "Dog", "Bird", "Elephant", "Pig", "Rabbit", "Hamster", "Turtle", "Frog", "Horse", "Lion"];
 
 function displayAnimalGif() {
     var animal = $(this).attr("data-name");
@@ -27,15 +27,27 @@ function displayAnimalGif() {
                 var p = $("<p>").text("Rating: " + results[i].rating);
 
                 var animalImage = $("<img>");
-                animalImage.attr("src", results[i].images.fixed_height.url);
+                animalImage.addClass("gif");
+
+                animalImage.attr("src", results[i].images.fixed_height_still.url);
+                animalImage.attr("data-animate", results[i].images.fixed_height.url);
+                animalImage.attr("data-still", results[i].images.fixed_height_still.url);
+                animalImage.attr("data-state", "still");
 
                 animalDiv.append(p);
                 animalDiv.append(animalImage);
 
                 $("#gifs-appear-here").prepend(animalDiv);
+
             }
         });
 }
+
+// function resetSearch() {
+//     for (let i = 0; i < animals.length; i++) {
+//         $("#gifs-appear-here").empty();
+//     }
+// }
 
 function renderButtons() {
     $("#buttons-view").empty();
@@ -45,30 +57,29 @@ function renderButtons() {
         var a = $("<button>");
         a.addClass("animal-btn");
         a.addClass("btn btn-info");
-        // Adding a data-attribute
         a.attr("data-name", animals[i]);
-        // Providing the initial button text
         a.text(animals[i]);
-        // Adding the button to the buttons-view div
         $("#buttons-view").append(a);
     }
 }
 
 $("#add-animal").on("click", function (event) {
     event.preventDefault();
-    // This line grabs the input from the textbox
     var animal = $("#animal-input").val().trim();
-
-    // Adding movie from the textbox to our array
     animals.push(animal);
 
-    // Calling renderButtons which handles the processing of our movie array
     renderButtons();
 });
 
-$(".gif").on("click", function (event) {
 
-    var state = $(this).att('data-state');
+$(document).on("click", ".animal-btn", displayAnimalGif);
+
+renderButtons();
+
+// $(".animal-btn").on("click", displayAnimalGif);
+
+function changeState() {
+    var state = $(this).attr('data-state');
     console.log(state);
     if (state === 'still') {
         $(this).attr('src', $(this).attr('data-animate'));
@@ -78,13 +89,14 @@ $(".gif").on("click", function (event) {
         $(this).attr('src', $(this).attr('data-still'));
         $(this).attr('data-state', 'still');
     }
+};
 
-});
+$(document).on("click", ".gif", changeState);
 
-// Adding a click event listener to all elements with a class of "movie-btn"
-$(document).on("click", ".animal-btn", displayAnimalGif);
 
-// Calling the renderButtons function to display the intial buttons
-renderButtons();
+//TODO: hacer que las imagenes aparezcan una al lado de la otra.
+//TODO: pause and active click. 
+//TODO: reset search cuando clickean un nuevo boton. 
+//TODO: add to portfolio, 
 
 

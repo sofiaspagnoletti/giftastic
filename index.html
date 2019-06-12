@@ -19,23 +19,37 @@
             </a>
         </div>
     </div>
-    <br>
-    <div class="container text-center">
-        <button type="button" id="buttons-view" class="btn btn-info"></button>
+
+    <div class="jumbotron text-center">
+        <div class="container text-center">
+            <button type="button" id="buttons-view" class="btn btn-info"></button>
+        </div>
+        <!-- class="btn btn-info" -->
+
+        <br>
+
+        <div class="container text-center col-3">
+            <!-- <div class="col-3 float-right"> -->
+            <form>
+                <div id="animal-form" class="form-group">
+                    <label for="animal-input">Add your favorite animal:</label>
+                    <input class="form-control" id="animal-input">
+                </div>
+                <button id="add-animal" class="btn btn-info">Submit</button>
+            </form>
+            <!-- </div> -->
+        </div>
     </div>
 
-    <form>
-        <div id="animal-form" class="form-group">
-            <label for="animal-input">Add your favorite animal:</label>
-            <input class="form-control" id="animal-input">
+
+        <div class="col-8 float-none d-flex flex-wrap">
+            <div id="gifs-appear-here"></div>
         </div>
-        <button id="add-animal" class="btn btn-info">Submit</button>
-    </form>
 
 
-    <div id="gifs-appear-here"></div>
 
-    <script src="assets/javascript/app.js"></script>
+
+        <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
