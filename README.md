@@ -1,4 +1,4 @@
-### GifTastic
+# GifTastic
 
 For this assigment, Giphy API was used to make a dynamic web page that populates with gifs. 
 
