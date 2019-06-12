@@ -1,10 +1,6 @@
 
 
-
-// $("button").on("click", function () {
-//     var animal = $(this).attr("data-animal");
-
-var animals = ["Cat", "Dog", "Bird", "Elephant", "Pig", "Rabbit", "Hamster", "Turtle", "Frog", "Horse", "Lion"];
+var animals = ["Cat", "Dog", "Manatee", "Bird", "Elephant", "Pig", "Rabbit", "Hamster", "Turtle", "Frog", "Horse", "Lion"];
 
 function displayAnimalGif() {
     var animal = $(this).attr("data-name");
@@ -20,10 +16,11 @@ function displayAnimalGif() {
 
             console.log(response);
             var results = response.data;
-
+            $("#gifs-appear-here").empty();
             for (var i = 0; i < results.length; i++) {
 
                 var animalDiv = $("<div>");
+                animalDiv.addClass("col-6");
                 var p = $("<p>").text("Rating: " + results[i].rating);
 
                 var animalImage = $("<img>");
@@ -34,8 +31,8 @@ function displayAnimalGif() {
                 animalImage.attr("data-still", results[i].images.fixed_height_still.url);
                 animalImage.attr("data-state", "still");
 
-                animalDiv.append(p);
                 animalDiv.append(animalImage);
+                animalDiv.append(p);
 
                 $("#gifs-appear-here").prepend(animalDiv);
 
@@ -43,11 +40,6 @@ function displayAnimalGif() {
         });
 }
 
-// function resetSearch() {
-//     for (let i = 0; i < animals.length; i++) {
-//         $("#gifs-appear-here").empty();
-//     }
-// }
 
 function renderButtons() {
     $("#buttons-view").empty();
@@ -92,9 +84,5 @@ function changeState() {
 $(document).on("click", ".gif", changeState);
 
 
-//TODO: hacer que las imagenes aparezcan una al lado de la otra.
-
-//TODO: reset search cuando clickean un nuevo boton. 
-//TODO: add to portfolio, 
 
 
