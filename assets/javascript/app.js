@@ -76,8 +76,6 @@ $(document).on("click", ".animal-btn", displayAnimalGif);
 
 renderButtons();
 
-// $(".animal-btn").on("click", displayAnimalGif);
-
 function changeState() {
     var state = $(this).attr('data-state');
     console.log(state);
@@ -95,7 +93,7 @@ $(document).on("click", ".gif", changeState);
 
 
 //TODO: hacer que las imagenes aparezcan una al lado de la otra.
-//TODO: pause and active click. 
+
 //TODO: reset search cuando clickean un nuevo boton. 
 //TODO: add to portfolio, 
 
